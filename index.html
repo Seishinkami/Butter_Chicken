@@ -7,35 +7,65 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --ink: #2d2119;
+      --muted: #705e52;
+      --cream: #fbf5ea;
+      --paper: #fffdf8;
+      --sage: #52715b;
+      --lime: #d9e65a;
+      --orange: #d8642f;
+      --line: #e8dac8;
+    }
+
     body {
       font-family: 'Work Sans', sans-serif;
-      background-color: #1a1410;
-      color: #fbf5ea;
+      background-color: var(--ink);
+      color: var(--cream);
     }
+
     .display-font {
       font-family: 'Fraunces', serif;
     }
+
+    /* Custom Palette Utility Classes */
+    .bg-ink { background-color: var(--ink); }
+    .bg-paper-card { background-color: rgba(255, 253, 248, 0.04); }
+    .bg-paper-card-inner { background-color: rgba(255, 253, 248, 0.03); }
+    .bg-lime { background-color: var(--lime); }
+    .bg-orange { background-color: var(--orange); }
+    .bg-sage { background-color: var(--sage); }
+
+    .text-cream { color: var(--cream); }
+    .text-muted-custom { color: var(--muted); }
+    .text-lime { color: var(--lime); }
+    .text-orange { color: var(--orange); }
+    .text-sage { color: var(--sage); }
+    .text-ink { color: var(--ink); }
+
+    .border-line-custom { border-color: var(--line); }
+    .border-custom-subtle { border-color: rgba(232, 218, 200, 0.15); }
+
     @media print {
       .no-print { display: none !important; }
       body { background-color: white; color: black; }
-      .print-card { background: none; border: 1px solid #ccc; color: black; }
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col bg-[#1a1410] text-[#fbf5ea]">
+<body class="min-h-screen flex flex-col bg-ink text-cream">
 
   <!-- Top Navigation Header -->
-  <header class="no-print border-b border-white/10 bg-[#221b16]/80 backdrop-blur sticky top-0 z-50">
+  <header class="no-print border-b border-custom-subtle bg-ink/90 backdrop-blur sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <div class="flex items-center gap-2">
         <span class="text-xl">🍳</span>
-        <span class="font-bold text-sm tracking-wide text-white">Recipe Book</span>
+        <span class="font-bold text-sm tracking-wide text-cream">Recipe Book</span>
       </div>
       <div class="flex items-center gap-3">
-        <button onclick="window.print()" class="text-xs px-3 py-1.5 rounded-lg border border-white/20 hover:bg-white/10 transition text-gray-300">
+        <button onclick="window.print()" class="text-xs px-3 py-1.5 rounded-lg border border-custom-subtle hover:bg-white/10 transition text-cream">
           🖨️ Print
         </button>
-        <a href="display.html" target="_blank" class="text-xs font-semibold px-4 py-1.5 rounded-lg bg-[#d9e65a] text-[#1a1410] hover:bg-[#c4d148] transition flex items-center gap-1">
+        <a href="display.html" target="_blank" class="text-xs font-semibold px-4 py-1.5 rounded-lg bg-lime text-ink hover:brightness-110 transition flex items-center gap-1">
           📺 Full-Screen Display Mode
         </a>
       </div>
@@ -45,128 +75,166 @@
   <main class="max-w-6xl mx-auto px-4 py-8 flex-1 w-full space-y-10">
 
     <!-- Hero Card -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-[#221b16] rounded-2xl p-6 lg:p-8 border border-white/5 shadow-2xl">
-      <div class="relative h-64 lg:h-96 rounded-xl overflow-hidden">
-        <img src="https://images.pexels.com/photos/9218763/pexels-photo-9218763.jpeg" 
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-paper-card rounded-2xl p-6 lg:p-8 border border-custom-subtle shadow-2xl">
+      <div class="relative h-64 lg:h-96 rounded-xl overflow-hidden border border-custom-subtle">
+        <!-- Animated Hero WebP / GIF -->
+        <img src="tumblr_o7laa1suyP1sa9pj8o4_400_4.webp" 
              alt="Garlic Butter Chicken with Cilantro Lime Rice" 
              class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#2d2119]/70 to-transparent"></div>
       </div>
 
       <div class="space-y-6">
         <div>
-          <span class="text-[#d9e65a] uppercase tracking-widest text-xs font-bold">Weeknight Special</span>
-          <h1 class="display-font text-3xl lg:text-5xl font-bold text-white mt-1 leading-tight">
-            Garlic Butter Chicken <br><span class="text-[#d9e65a]">with Cilantro Lime Rice</span>
+          <span class="text-lime uppercase tracking-widest text-xs font-bold">Weeknight Special</span>
+          <h1 class="display-font text-3xl lg:text-5xl font-bold text-cream mt-1 leading-tight">
+            Garlic Butter Chicken <br><span class="text-lime">with Cilantro Lime Rice</span>
           </h1>
-          <p class="text-gray-300 text-sm mt-3 leading-relaxed">
+          <p class="text-cream/80 text-sm mt-3 leading-relaxed">
             Juicy pan-seared chicken breasts basted in rich garlic butter, paired with fresh, citrusy cilantro lime basmati rice.
           </p>
         </div>
 
         <!-- Recipe Stats -->
-        <div class="grid grid-cols-3 gap-4 p-4 rounded-xl bg-[#1a1410] border border-white/5 text-center">
+        <div class="grid grid-cols-3 gap-4 p-4 rounded-xl bg-paper-card-inner border border-custom-subtle text-center">
           <div>
-            <p class="text-[10px] uppercase text-gray-400 font-bold tracking-wider">Prep Time</p>
-            <p class="text-base lg:text-lg font-bold text-white mt-1">15 mins</p>
+            <p class="text-[10px] uppercase text-cream/60 font-bold tracking-wider">Prep Time</p>
+            <p class="text-base lg:text-lg font-bold text-cream mt-1">15 mins</p>
           </div>
           <div>
-            <p class="text-[10px] uppercase text-gray-400 font-bold tracking-wider">Cook Time</p>
-            <p class="text-base lg:text-lg font-bold text-white mt-1">30 mins</p>
+            <p class="text-[10px] uppercase text-cream/60 font-bold tracking-wider">Cook Time</p>
+            <p class="text-base lg:text-lg font-bold text-cream mt-1">30 mins</p>
           </div>
           <div>
-            <p class="text-[10px] uppercase text-gray-400 font-bold tracking-wider">Total Time</p>
-            <p class="text-base lg:text-lg font-bold text-[#d9e65a] mt-1">45 mins</p>
+            <p class="text-[10px] uppercase text-cream/60 font-bold tracking-wider">Total Time</p>
+            <p class="text-base lg:text-lg font-bold text-lime mt-1">45 mins</p>
           </div>
         </div>
 
         <!-- Serving Controls -->
-        <div class="flex items-center justify-between p-4 rounded-xl bg-[#1a1410] border border-white/5">
+        <div class="flex items-center justify-between p-4 rounded-xl bg-paper-card-inner border border-custom-subtle">
           <div>
-            <p class="text-xs text-gray-400 font-medium">Adjust Servings</p>
-            <p class="text-lg font-bold text-white"><span id="servings-count">4</span> Servings</p>
+            <p class="text-xs text-cream/60 font-medium">Adjust Servings</p>
+            <p class="text-lg font-bold text-cream"><span id="servings-count">4</span> Servings</p>
           </div>
           <div class="flex items-center gap-2">
-            <button onclick="updateServings(-1)" class="w-9 h-9 rounded-lg bg-[#221b16] border border-white/10 hover:bg-white/10 font-bold text-lg flex items-center justify-center transition text-white">-</button>
-            <button onclick="updateServings(1)" class="w-9 h-9 rounded-lg bg-[#221b16] border border-white/10 hover:bg-white/10 font-bold text-lg flex items-center justify-center transition text-white">+</button>
+            <button onclick="updateServings(-1)" class="w-9 h-9 rounded-lg bg-ink border border-custom-subtle hover:bg-white/10 font-bold text-lg flex items-center justify-center transition text-cream">-</button>
+            <button onclick="updateServings(1)" class="w-9 h-9 rounded-lg bg-ink border border-custom-subtle hover:bg-white/10 font-bold text-lg flex items-center justify-center transition text-cream">+</button>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Video Tutorials Section -->
+    <section class="bg-paper-card rounded-2xl p-6 border border-custom-subtle space-y-4">
+      <div class="flex items-center justify-between border-b border-custom-subtle pb-3">
+        <h2 class="display-font text-2xl font-bold text-lime">Video Tutorials</h2>
+        <span class="text-xs text-cream/60">Step-by-Step Guides</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Video 1 -->
+        <div class="space-y-2">
+          <div class="relative w-full aspect-video rounded-xl overflow-hidden border border-custom-subtle bg-black">
+            <iframe class="absolute inset-0 w-full h-full" 
+                    src="https://www.youtube.com/embed/yn_aBONhbJ0" 
+                    title="Recipe Video Tutorial 1" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+            </iframe>
+          </div>
+          <p class="text-xs text-cream/70 font-medium">Tutorial 1: Garlic Butter Chicken Method</p>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="space-y-2">
+          <div class="relative w-full aspect-video rounded-xl overflow-hidden border border-custom-subtle bg-black">
+            <iframe class="absolute inset-0 w-full h-full" 
+                    src="https://www.youtube.com/embed/tBZ2wssEg8Q" 
+                    title="Recipe Video Tutorial 2" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+            </iframe>
+          </div>
+          <p class="text-xs text-cream/70 font-medium">Tutorial 2: Rice & Technique Overview</p>
+        </div>
+      </div>
+    </section>
 
     <!-- Main Grid: Ingredients & Preparation Steps -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
       
       <!-- Interactive Ingredients (5 cols) -->
       <div class="lg:col-span-5 space-y-6">
-        <div class="bg-[#221b16] rounded-2xl p-6 border border-white/5 space-y-6">
-          <div class="flex items-center justify-between border-b border-white/10 pb-3">
-            <h2 class="display-font text-2xl font-bold text-[#d9e65a]">Ingredients</h2>
-            <span class="text-xs text-gray-400">Click to cross off</span>
+        <div class="bg-paper-card rounded-2xl p-6 border border-custom-subtle space-y-6">
+          <div class="flex items-center justify-between border-b border-custom-subtle pb-3">
+            <h2 class="display-font text-2xl font-bold text-lime">Ingredients</h2>
+            <span class="text-xs text-cream/60">Click to cross off</span>
           </div>
 
           <!-- Chicken Ingredients -->
           <div>
-            <h3 class="font-bold text-[#d8642f] text-xs uppercase tracking-wider mb-3">For the Chicken</h3>
+            <h3 class="font-bold text-orange text-xs uppercase tracking-wider mb-3">For the Chicken</h3>
             <ul class="space-y-2 text-sm">
               <li class="flex items-center justify-between p-2 rounded hover:bg-white/5 cursor-pointer select-none" onclick="toggleItem(this)">
-                <span class="item-name text-gray-300">Chicken breasts</span>
-                <span class="font-semibold text-white bg-[#1a1410] px-2 py-0.5 rounded text-xs" data-base="4">4</span>
+                <span class="item-name text-cream/90">Chicken breasts</span>
+                <span class="font-semibold text-cream bg-paper-card-inner px-2 py-0.5 rounded text-xs border border-custom-subtle" data-base="4">4</span>
               </li>
               <li class="flex items-center justify-between p-2 rounded hover:bg-white/5 cursor-pointer select-none" onclick="toggleItem(this)">
-                <span class="item-name text-gray-300">Unsalted butter</span>
-                <span class="font-semibold text-white bg-[#1a1410] px-2 py-0.5 rounded text-xs" data-base="2" data-unit="tbsp">2 tbsp</span>
+                <span class="item-name text-cream/90">Unsalted butter</span>
+                <span class="font-semibold text-cream bg-paper-card-inner px-2 py-0.5 rounded text-xs border border-custom-subtle" data-base="2" data-unit="tbsp">2 tbsp</span>
               </li>
               <li class="flex items-center justify-between p-2 rounded hover:bg-white/5 cursor-pointer select-none" onclick="toggleItem(this)">
-                <span class="item-name text-gray-300">Garlic, minced</span>
-                <span class="font-semibold text-white bg-[#1a1410] px-2 py-0.5 rounded text-xs" data-base="4" data-unit="cloves">4 cloves</span>
+                <span class="item-name text-cream/90">Garlic, minced</span>
+                <span class="font-semibold text-cream bg-paper-card-inner px-2 py-0.5 rounded text-xs border border-custom-subtle" data-base="4" data-unit="cloves">4 cloves</span>
               </li>
               <li class="flex items-center justify-between p-2 rounded hover:bg-white/5 cursor-pointer select-none" onclick="toggleItem(this)">
-                <span class="item-name text-gray-300">Olive oil</span>
-                <span class="font-semibold text-white bg-[#1a1410] px-2 py-0.5 rounded text-xs" data-base="1" data-unit="tbsp">1 tbsp</span>
+                <span class="item-name text-cream/90">Olive oil</span>
+                <span class="font-semibold text-cream bg-paper-card-inner px-2 py-0.5 rounded text-xs border border-custom-subtle" data-base="1" data-unit="tbsp">1 tbsp</span>
               </li>
               <li class="flex items-center justify-between p-2 rounded hover:bg-white/5 cursor-pointer select-none" onclick="toggleItem(this)">
-                <span class="item-name text-gray-300">Kosher salt</span>
-                <span class="font-semibold text-white bg-[#1a1410] px-2 py-0.5 rounded text-xs" data-base="1" data-unit="tsp">1 tsp</span>
+                <span class="item-name text-cream/90">Kosher salt</span>
+                <span class="font-semibold text-cream bg-paper-card-inner px-2 py-0.5 rounded text-xs border border-custom-subtle" data-base="1" data-unit="tsp">1 tsp</span>
               </li>
               <li class="flex items-center justify-between p-2 rounded hover:bg-white/5 cursor-pointer select-none" onclick="toggleItem(this)">
-                <span class="item-name text-gray-300">Black pepper</span>
-                <span class="font-semibold text-white bg-[#1a1410] px-2 py-0.5 rounded text-xs" data-base="0.5" data-unit="tsp">½ tsp</span>
+                <span class="item-name text-cream/90">Black pepper</span>
+                <span class="font-semibold text-cream bg-paper-card-inner px-2 py-0.5 rounded text-xs border border-custom-subtle" data-base="0.5" data-unit="tsp">½ tsp</span>
               </li>
               <li class="flex items-center justify-between p-2 rounded hover:bg-white/5 cursor-pointer select-none" onclick="toggleItem(this)">
-                <span class="item-name text-gray-300">Paprika</span>
-                <span class="font-semibold text-white bg-[#1a1410] px-2 py-0.5 rounded text-xs" data-base="0.5" data-unit="tsp">½ tsp</span>
+                <span class="item-name text-cream/90">Paprika</span>
+                <span class="font-semibold text-cream bg-paper-card-inner px-2 py-0.5 rounded text-xs border border-custom-subtle" data-base="0.5" data-unit="tsp">½ tsp</span>
               </li>
             </ul>
           </div>
 
           <!-- Rice Ingredients -->
           <div>
-            <h3 class="font-bold text-[#52715b] text-xs uppercase tracking-wider mb-3">For the Rice</h3>
+            <h3 class="font-bold text-sage text-xs uppercase tracking-wider mb-3">For the Rice</h3>
             <ul class="space-y-2 text-sm">
               <li class="flex items-center justify-between p-2 rounded hover:bg-white/5 cursor-pointer select-none" onclick="toggleItem(this)">
-                <span class="item-name text-gray-300">Basmati rice</span>
-                <span class="font-semibold text-white bg-[#1a1410] px-2 py-0.5 rounded text-xs" data-base="1.5" data-unit="cups">1½ cups</span>
+                <span class="item-name text-cream/90">Basmati rice</span>
+                <span class="font-semibold text-cream bg-paper-card-inner px-2 py-0.5 rounded text-xs border border-custom-subtle" data-base="1.5" data-unit="cups">1½ cups</span>
               </li>
               <li class="flex items-center justify-between p-2 rounded hover:bg-white/5 cursor-pointer select-none" onclick="toggleItem(this)">
-                <span class="item-name text-gray-300">Broth or water</span>
-                <span class="font-semibold text-white bg-[#1a1410] px-2 py-0.5 rounded text-xs" data-base="2.25" data-unit="cups">2¼ cups</span>
+                <span class="item-name text-cream/90">Broth or water</span>
+                <span class="font-semibold text-cream bg-paper-card-inner px-2 py-0.5 rounded text-xs border border-custom-subtle" data-base="2.25" data-unit="cups">2¼ cups</span>
               </li>
               <li class="flex items-center justify-between p-2 rounded hover:bg-white/5 cursor-pointer select-none" onclick="toggleItem(this)">
-                <span class="item-name text-gray-300">Fresh limes</span>
-                <span class="font-semibold text-white bg-[#1a1410] px-2 py-0.5 rounded text-xs" data-base="2">2</span>
+                <span class="item-name text-cream/90">Fresh limes</span>
+                <span class="font-semibold text-cream bg-paper-card-inner px-2 py-0.5 rounded text-xs border border-custom-subtle" data-base="2">2</span>
               </li>
               <li class="flex items-center justify-between p-2 rounded hover:bg-white/5 cursor-pointer select-none" onclick="toggleItem(this)">
-                <span class="item-name text-gray-300">Fresh cilantro</span>
-                <span class="font-semibold text-white bg-[#1a1410] px-2 py-0.5 rounded text-xs" data-base="0.5" data-unit="cup">½ cup</span>
+                <span class="item-name text-cream/90">Fresh cilantro</span>
+                <span class="font-semibold text-cream bg-paper-card-inner px-2 py-0.5 rounded text-xs border border-custom-subtle" data-base="0.5" data-unit="cup">½ cup</span>
               </li>
               <li class="flex items-center justify-between p-2 rounded hover:bg-white/5 cursor-pointer select-none" onclick="toggleItem(this)">
-                <span class="item-name text-gray-300">Fresh parsley</span>
-                <span class="font-semibold text-white bg-[#1a1410] px-2 py-0.5 rounded text-xs" data-base="0.25" data-unit="cup">¼ cup</span>
+                <span class="item-name text-cream/90">Fresh parsley</span>
+                <span class="font-semibold text-cream bg-paper-card-inner px-2 py-0.5 rounded text-xs border border-custom-subtle" data-base="0.25" data-unit="cup">¼ cup</span>
               </li>
               <li class="flex items-center justify-between p-2 rounded hover:bg-white/5 cursor-pointer select-none" onclick="toggleItem(this)">
-                <span class="item-name text-gray-300">Kosher salt</span>
-                <span class="font-semibold text-white bg-[#1a1410] px-2 py-0.5 rounded text-xs" data-base="0.75" data-unit="tsp">¾ tsp</span>
+                <span class="item-name text-cream/90">Kosher salt</span>
+                <span class="font-semibold text-cream bg-paper-card-inner px-2 py-0.5 rounded text-xs border border-custom-subtle" data-base="0.75" data-unit="tsp">¾ tsp</span>
               </li>
             </ul>
           </div>
@@ -175,52 +243,52 @@
 
       <!-- Preparation Steps (7 cols) -->
       <div class="lg:col-span-7 space-y-6">
-        <div class="bg-[#221b16] rounded-2xl p-6 border border-white/5 space-y-6">
-          <div class="flex items-center justify-between border-b border-white/10 pb-3">
-            <h2 class="display-font text-2xl font-bold text-[#d9e65a]">Preparation Steps</h2>
-            <span class="text-xs text-gray-400">Click step to mark complete</span>
+        <div class="bg-paper-card rounded-2xl p-6 border border-custom-subtle space-y-6">
+          <div class="flex items-center justify-between border-b border-custom-subtle pb-3">
+            <h2 class="display-font text-2xl font-bold text-lime">Preparation Steps</h2>
+            <span class="text-xs text-cream/60">Click step to mark complete</span>
           </div>
 
           <div class="space-y-4">
             <!-- Step 1 -->
-            <div class="step-card p-4 rounded-xl bg-[#1a1410] border border-white/5 flex gap-4 transition cursor-pointer" onclick="toggleStep(this)">
-              <div class="step-num w-8 h-8 rounded-full bg-[#d8642f] text-white font-bold flex items-center justify-center flex-shrink-0 text-xs">1</div>
+            <div class="step-card p-4 rounded-xl bg-paper-card-inner border border-custom-subtle flex gap-4 transition cursor-pointer" onclick="toggleStep(this)">
+              <div class="step-num w-8 h-8 rounded-full bg-orange text-cream font-bold flex items-center justify-center flex-shrink-0 text-xs">1</div>
               <div class="space-y-1">
-                <h3 class="font-bold text-white text-base">Cook & Steam Rice</h3>
-                <p class="text-sm text-gray-300 leading-relaxed">
+                <h3 class="font-bold text-cream text-base">Cook & Steam Rice</h3>
+                <p class="text-sm text-cream/80 leading-relaxed">
                   Rinse basmati rice until water runs clear. In a medium saucepan, combine rice, broth, and salt. Bring to a boil, cover, reduce heat to low, and simmer for 15 minutes. Remove from heat and let sit covered for 10 minutes before fluffing with a fork.
                 </p>
               </div>
             </div>
 
             <!-- Step 2 -->
-            <div class="step-card p-4 rounded-xl bg-[#1a1410] border border-white/5 flex gap-4 transition cursor-pointer" onclick="toggleStep(this)">
-              <div class="step-num w-8 h-8 rounded-full bg-[#d8642f] text-white font-bold flex items-center justify-center flex-shrink-0 text-xs">2</div>
+            <div class="step-card p-4 rounded-xl bg-paper-card-inner border border-custom-subtle flex gap-4 transition cursor-pointer" onclick="toggleStep(this)">
+              <div class="step-num w-8 h-8 rounded-full bg-orange text-cream font-bold flex items-center justify-center flex-shrink-0 text-xs">2</div>
               <div class="space-y-1">
-                <h3 class="font-bold text-white text-base">Sear Chicken Breasts</h3>
-                <p class="text-sm text-gray-300 leading-relaxed">
+                <h3 class="font-bold text-cream text-base">Sear Chicken Breasts</h3>
+                <p class="text-sm text-cream/80 leading-relaxed">
                   Pat chicken breasts dry with paper towels. Season generously on both sides with kosher salt, black pepper, and paprika. Heat olive oil in a large heavy skillet over medium-high heat. Sear chicken for 5–6 minutes per side until golden brown.
                 </p>
               </div>
             </div>
 
             <!-- Step 3 -->
-            <div class="step-card p-4 rounded-xl bg-[#1a1410] border border-white/5 flex gap-4 transition cursor-pointer" onclick="toggleStep(this)">
-              <div class="step-num w-8 h-8 rounded-full bg-[#d8642f] text-white font-bold flex items-center justify-center flex-shrink-0 text-xs">3</div>
+            <div class="step-card p-4 rounded-xl bg-paper-card-inner border border-custom-subtle flex gap-4 transition cursor-pointer" onclick="toggleStep(this)">
+              <div class="step-num w-8 h-8 rounded-full bg-orange text-cream font-bold flex items-center justify-center flex-shrink-0 text-xs">3</div>
               <div class="space-y-1">
-                <h3 class="font-bold text-white text-base">Garlic Butter Basting</h3>
-                <p class="text-sm text-gray-300 leading-relaxed">
+                <h3 class="font-bold text-cream text-base">Garlic Butter Basting</h3>
+                <p class="text-sm text-cream/80 leading-relaxed">
                   Turn heat down to medium-low. Add butter and minced garlic to the skillet. Once butter foams, tilt the pan and continuously spoon the warm garlic butter over the chicken for 2–3 minutes until internal temperature reaches 165°F (74°C).
                 </p>
               </div>
             </div>
 
             <!-- Step 4 -->
-            <div class="step-card p-4 rounded-xl bg-[#1a1410] border border-white/5 flex gap-4 transition cursor-pointer" onclick="toggleStep(this)">
-              <div class="step-num w-8 h-8 rounded-full bg-[#d8642f] text-white font-bold flex items-center justify-center flex-shrink-0 text-xs">4</div>
+            <div class="step-card p-4 rounded-xl bg-paper-card-inner border border-custom-subtle flex gap-4 transition cursor-pointer" onclick="toggleStep(this)">
+              <div class="step-num w-8 h-8 rounded-full bg-orange text-cream font-bold flex items-center justify-center flex-shrink-0 text-xs">4</div>
               <div class="space-y-1">
-                <h3 class="font-bold text-white text-base">Finish Rice & Assemble</h3>
-                <p class="text-sm text-gray-300 leading-relaxed">
+                <h3 class="font-bold text-cream text-base">Finish Rice & Assemble</h3>
+                <p class="text-sm text-cream/80 leading-relaxed">
                   Fold lime zest, lime juice, fresh cilantro, and chopped parsley into the cooked basmati rice. Slice the chicken into strips and serve over a generous bed of warm cilantro lime rice, drizzling remaining garlic butter from the pan over top.
                 </p>
               </div>
@@ -232,8 +300,8 @@
     </div>
   </main>
 
-  <footer class="no-print border-t border-white/10 py-6 text-center text-xs text-gray-500">
-    <p>Garlic Butter Chicken Recipe • Open <a href="display.html" class="text-[#d9e65a] underline">display.html</a> for kiosk display mode.</p>
+  <footer class="no-print border-t border-custom-subtle py-6 text-center text-xs text-cream/50">
+    <p>Garlic Butter Chicken Recipe • Open <a href="display.html" class="text-lime underline">display.html</a> for kiosk display mode.</p>
   </footer>
 
   <script>
@@ -273,7 +341,7 @@
     function toggleStep(card) {
       card.classList.toggle('opacity-40');
       card.querySelector('.step-num').classList.toggle('bg-gray-600');
-      card.querySelector('.step-num').classList.toggle('bg-[#d8642f]');
+      card.querySelector('.step-num').classList.toggle('bg-orange');
     }
   </script>
 
