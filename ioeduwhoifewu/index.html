@@ -70,7 +70,9 @@
    <main id="top">
     <section class="max-w-6xl mx-auto px-5 pt-8 md:pt-12">
      <div class="hero-image-wrap relative min-h-[500px] md:min-h-[590px] rounded-[2rem] overflow-hidden shadow-xl shadow-[#6c482c]/15">
-      <img data-template-id="hero-food-image" class="canva-image absolute inset-0 w-full h-full object-cover" loading="eager" src="https://images.pexels.com/photos/9218763/pexels-photo-9218763.jpeg" alt="Close-up of a butter chicken meal with rice garnished with lime and herbs.">
+      <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline poster="fallback-image.jpg">
+        <source src="short-cooking-clip.mp4" type="video/mp4">
+      </video>
       <div class="hero-copy absolute z-10 inset-0 flex items-end p-7 md:p-14 text-white max-w-4xl">
        <div class="animate-[fadeIn_.7s_ease-out]">
         <p data-template-id="hero-kicker" class="canva-text eyebrow mb-4 text-[#eff4b2]" style="color: rgb(239, 244, 178); font-weight: 700; font-style: normal; font-size: 16px;">Weeknight favorite</p>
@@ -216,7 +218,7 @@
      </section>
      <section class="mt-16" aria-labelledby="video-guides-heading">
       <h2 id="video-guides-heading" class="display-font font-bold text-3xl md:text-4xl mb-6">Video Guides</h2>
-      <div class="grid md:grid-cols-3 gap-5">
+      <div class="grid md:grid-cols-2 gap-5">
        <article class="overflow-hidden rounded-2xl bg-[#fffdf8] border border-[#e8dac8] shadow-sm">
         <h3 class="display-font font-bold text-xl px-5 pt-5 pb-3">Video Tutorial 1</h3>
         <div class="aspect-video overflow-hidden rounded-xl mx-5 mb-5"><iframe class="w-full h-full" src="https://www.youtube.com/embed/tBZ2wssEg8Q" title="Video Tutorial 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
@@ -225,12 +227,6 @@
        <article class="overflow-hidden rounded-2xl bg-[#fffdf8] border border-[#e8dac8] shadow-sm">
         <h3 class="display-font font-bold text-xl px-5 pt-5 pb-3">Video Tutorial 2</h3>
         <div class="aspect-video overflow-hidden rounded-xl mx-5 mb-5"><iframe class="w-full h-full" src="https://www.youtube.com/embed/yn_aBONhbJ0?start=1" title="Video Tutorial 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-        </div>
-       </article>
-       <article class="overflow-hidden rounded-2xl bg-[#fffdf8] border border-[#e8dac8] shadow-sm">
-        <h3 class="display-font font-bold text-xl px-5 pt-5 pb-3">Looping Video Display</h3>
-        <div class="aspect-video overflow-hidden rounded-xl mx-5 mb-5">
-         <iframe class="w-full h-full" src="https://www.youtube.com/embed/hGG5ZG4kI5Q?start=10&end=30&loop=1&playlist=hGG5ZG4kI5Q&autoplay=1&mute=1&controls=0" title="Looping Video Display" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
        </article>
       </div>
@@ -389,4 +385,5 @@
     }
     initialize();
   </script>
+ 
 </body></html>

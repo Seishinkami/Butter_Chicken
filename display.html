@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Looping Video Display</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html { width: 100%; height: 100%; overflow: hidden; background: #000; }
+    #player { width: 100vw; height: 100vh; pointer-events: none; }
+  </style>
+</head>
+<body>
+  <div id="player"></div>
+
+  <script>
+    // --- SET YOUR TIMESTAMPS (IN SECONDS) HERE ---
+    const startTime = 10;  // Example: start at 10 seconds (0:10)
+    const endTime   = 30;  // Example: end at 30 seconds (0:30)
+    const videoId   = 'hGG5ZG4kI5Q';
+
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        videoId: videoId,
+        playerVars: {
+          'autoplay': 1,
+          'controls': 0,
+          'mute': 1,          // Autoplay requires video to be muted in browsers
+          'start': startTime,
+          'end': endTime,
+          'rel': 0,
+          'modestbranding': 1
+        },
+        events: {
+          'onReady': (e) => e.target.playVideo(),
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.ENDED) {
+        player.seekTo(startTime);
+        player.playVideo();
+      }
+    }
+
+    // Monitor playback time for high precision
+    setInterval(() => {
+      if (player && player.getCurrentTime && player.getCurrentTime() >= endTime) {
+        player.seekTo(startTime);
+        player.playVideo();
+      }
+    }, 200);
+  </script>
+</body>
+</html>
