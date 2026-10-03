@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garlic Butter Chicken - Standalone Display</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background-color: #1a1410;
+      color: #fbf5ea;
+    }
+    .display-font {
+      font-family: 'Fraunces', serif;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="h-full w-full overflow-hidden bg-[#1a1410] text-[#fbf5ea] flex flex-col lg:flex-row">
+
+  <!-- Edge-to-Edge Hero Column -->
+  <div class="relative w-full lg:w-1/2 h-2/5 lg:h-full flex-shrink-0 overflow-hidden">
+    <img src="https://images.pexels.com/photos/9218763/pexels-photo-9218763.jpeg" 
+         alt="Garlic Butter Chicken with Cilantro Lime Rice" 
+         class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#1a1410] via-black/40 to-transparent"></div>
+    
+    <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-12 z-10 flex flex-col justify-end">
+      <span class="text-[#d9e65a] uppercase tracking-widest text-xs font-bold mb-2">Weeknight Special</span>
+      <h1 class="display-font text-3xl lg:text-5xl font-bold leading-tight mb-3 text-white">
+        Garlic Butter Chicken<br><span class="text-[#d9e65a]">with Cilantro Lime Rice</span>
+      </h1>
+      <p class="text-gray-300 text-sm lg:text-base max-w-md mb-6 hidden sm:block">
+        Juicy pan-seared chicken, fragrant rice, and a bright squeeze of lime.
+      </p>
+
+      <!-- Quick Specs -->
+      <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/20 text-center lg:text-left">
+        <div>
+          <p class="text-[10px] uppercase text-gray-400 tracking-wider">Prep Time</p>
+          <p class="text-sm lg:text-lg font-bold text-white">15 mins</p>
+        </div>
+        <div>
+          <p class="text-[10px] uppercase text-gray-400 tracking-wider">Cook Time</p>
+          <p class="text-sm lg:text-lg font-bold text-white">30 mins</p>
+        </div>
+        <div>
+          <p class="text-[10px] uppercase text-gray-400 tracking-wider">Servings</p>
+          <p class="text-sm lg:text-lg font-bold text-white">4</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Column -->
+  <div class="w-full lg:w-1/2 h-3/5 lg:h-full overflow-y-auto no-scrollbar p-6 lg:p-12 bg-[#221b16] flex flex-col gap-8">
+    
+    <!-- Ingredients -->
+    <section>
+      <div class="flex items-center justify-between mb-4 border-b border-white/10 pb-2">
+        <h2 class="display-font text-xl lg:text-2xl font-bold text-[#d9e65a]">Ingredients</h2>
+        <span class="text-xs text-gray-400">Yield: 4 Servings</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+        <div class="bg-[#1a1410] p-4 rounded-xl border border-white/5">
+          <h3 class="font-bold text-[#d8642f] mb-3">For the Chicken</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex justify-between"><span>Chicken breasts</span> <span class="font-semibold text-white">4</span></li>
+            <li class="flex justify-between"><span>Unsalted butter</span> <span class="font-semibold text-white">2 tbsp</span></li>
+            <li class="flex justify-between"><span>Garlic, minced</span> <span class="font-semibold text-white">4 cloves</span></li>
+            <li class="flex justify-between"><span>Olive oil</span> <span class="font-semibold text-white">1 tbsp</span></li>
+            <li class="flex justify-between"><span>Kosher salt</span> <span class="font-semibold text-white">1 tsp</span></li>
+            <li class="flex justify-between"><span>Black pepper</span> <span class="font-semibold text-white">½ tsp</span></li>
+            <li class="flex justify-between"><span>Paprika</span> <span class="font-semibold text-white">½ tsp</span></li>
+          </ul>
+        </div>
+
+        <div class="bg-[#1a1410] p-4 rounded-xl border border-white/5">
+          <h3 class="font-bold text-[#52715b] mb-3">For the Rice</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex justify-between"><span>Basmati rice</span> <span class="font-semibold text-white">1½ cups</span></li>
+            <li class="flex justify-between"><span>Broth / Water</span> <span class="font-semibold text-white">2¼ cups</span></li>
+            <li class="flex justify-between"><span>Fresh limes</span> <span class="font-semibold text-white">2</span></li>
+            <li class="flex justify-between"><span>Fresh cilantro</span> <span class="font-semibold text-white">½ cup</span></li>
+            <li class="flex justify-between"><span>Fresh parsley</span> <span class="font-semibold text-white">¼ cup</span></li>
+            <li class="flex justify-between"><span>Kosher salt</span> <span class="font-semibold text-white">¾ tsp</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Method -->
+    <section>
+      <div class="flex items-center justify-between mb-4 border-b border-white/10 pb-2">
+        <h2 class="display-font text-xl lg:text-2xl font-bold text-[#d9e65a]">Preparation</h2>
+      </div>
+
+      <div class="space-y-3">
+        <div class="flex gap-4 p-4 rounded-xl bg-[#1a1410] border border-white/5">
+          <div class="w-7 h-7 rounded-full bg-[#d8642f] text-white font-bold flex items-center justify-center flex-shrink-0 text-xs">1</div>
+          <div>
+            <h3 class="font-bold text-white text-sm mb-1">Cook & Steam Rice</h3>
+            <p class="text-xs text-gray-300 leading-relaxed">Bring basmati, broth, and salt to a boil. Cover, turn to low, cook until tender, then rest covered for 10 minutes.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 p-4 rounded-xl bg-[#1a1410] border border-white/5">
+          <div class="w-7 h-7 rounded-full bg-[#d8642f] text-white font-bold flex items-center justify-center flex-shrink-0 text-xs">2</div>
+          <div>
+            <h3 class="font-bold text-white text-sm mb-1">Sear Chicken</h3>
+            <p class="text-xs text-gray-300 leading-relaxed">Season chicken with salt, pepper, and paprika. Sear in hot olive oil in a heavy skillet until golden brown on both sides.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 p-4 rounded-xl bg-[#1a1410] border border-white/5">
+          <div class="w-7 h-7 rounded-full bg-[#d8642f] text-white font-bold flex items-center justify-center flex-shrink-0 text-xs">3</div>
+          <div>
+            <h3 class="font-bold text-white text-sm mb-1">Garlic Butter Baste</h3>
+            <p class="text-xs text-gray-300 leading-relaxed">Reduce heat, melt butter with minced garlic, and continuously spoon the butter over chicken until fully cooked.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 p-4 rounded-xl bg-[#1a1410] border border-white/5">
+          <div class="w-7 h-7 rounded-full bg-[#d8642f] text-white font-bold flex items-center justify-center flex-shrink-0 text-xs">4</div>
+          <div>
+            <h3 class="font-bold text-white text-sm mb-1">Finish & Serve</h3>
+            <p class="text-xs text-gray-300 leading-relaxed">Fluff rice with a fork and fold in lime juice, zest, cilantro, and parsley. Plate with sliced chicken and drizzle butter on top.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
